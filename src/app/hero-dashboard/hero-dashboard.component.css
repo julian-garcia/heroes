@@ -1,12 +1,16 @@
 .hero-grid {
   display: grid;
   grid-gap: 10px;
-  grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
+  grid-template-columns: repeat(auto-fill, minmax(150px,1fr));
   grid-auto-rows: auto;
 }
-
+.hero-item {
+  display: flex;
+  align-items: center;
+}
 .hero-item img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  align-self: center; 
 }

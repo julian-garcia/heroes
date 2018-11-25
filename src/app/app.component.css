@@ -1,9 +1,9 @@
 .container {
-  
+  margin: 2rem 1rem;
 }
 
 @media (min-width: 900px) {
   .container {
-    margin: 0 20%;
+    margin: 2rem 20%;
   }
 }

@@ -13,7 +13,13 @@ export class HeroDashboardComponent implements OnInit {
   constructor(private heroesService: HeroesService) { }
 
   ngOnInit() {
-    this.heroes = this.heroesService.getHeroes();
+    this.heroes = this.heroesService.getHeroes()
+      .sort((hero1, hero2) => {
+        if (hero2.votes == hero1.votes) 
+          if (hero1.name > hero2.name) return 1; else return -1;
+        else 
+          return hero2.votes - hero1.votes;
+      });
   }
   
   onSelectHero(hero: Hero) {
