@@ -10,7 +10,7 @@ export class HeroesService {
     new Hero('Batman', 'assets/images/batman.jpg', 'Test desc', 0),
     new Hero('Captain America', 'assets/images/captain-america.jpg', 'Test desc', 0),
     new Hero('Mr. Fox', 'assets/images/fox.png', 'Test desc', 0),
-    new Hero('Penguin', 'assets/images/penguin.png', 'Test desc', 1),
+    new Hero('Penguin', 'assets/images/penguin.png', 'Test desc', 2),
     new Hero('Pumpkinton', 'assets/images/pumpkin.png', 'Test desc', 0),
     new Hero('Sand Slash', 'assets/images/sandslash.png', 'Test desc', 1),
     new Hero('Bookle', 'assets/images/book.png', 'Test desc', 1),

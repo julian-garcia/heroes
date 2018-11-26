@@ -1,0 +1,17 @@
+.hero-detail {
+  position: absolute;
+  display: grid;
+  top: 3rem;
+  background-color: rgba(255, 228, 196, .8);
+  width:75%;
+}
+
+.hero-detail-name {
+  grid-column: 1/2;
+  font-family: 'Permanent Marker', cursive;
+  font-size: 2rem;
+}
+
+.hero-detail-image {
+  max-width: 300px;
+}

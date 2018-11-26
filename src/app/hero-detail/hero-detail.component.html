@@ -1,3 +1,9 @@
-<p>
-  hero-detail works!
-</p>
+<div class="hero-detail">
+  <input class="hero-detail-name" type="text" [(ngModel)]="singleHero.name">
+  <img class="hero-detail-image" src="{{ singleHero.imagePath }}" 
+  alt="{{ singleHero.name }}">
+  <textarea cols="30" rows="5" [(ngModel)]="singleHero.description"></textarea>
+  <h3 class="votes">{{ singleHero.votes }}</h3>
+  <button>Upvote</button>
+  <button (click)="onCloseDetail($event)">Close</button>
+</div>

@@ -1,5 +1,10 @@
 <div class="hero-grid">
-  <div class="hero-item" *ngFor="let hero of heroes">
-    <img class="dashboard-image" src="{{ hero.imagePath }}" alt="{{ hero.name }}">
+  <div class="hero-item" *ngFor="let hero of heroes; let i = index" (click)="onSelectHero(hero)">
+    <h3 class="hero-name">{{ hero.name }}</h3>
+    <img class="dashboard-image" src="{{ hero.imagePath }}" 
+    alt="{{ hero.name }}">
+    <h3 class="votes" *ngIf="i==0">Upvotes: {{ hero.votes }}</h3>
+    <h3 class="votes" *ngIf="i>0">{{ hero.votes }}</h3>
   </div> 
 </div>
+<app-hero-detail [ngClass]="{'hide-detail': !showDetail, 'show-detail': showDetail}" [singleHero]="heroes[0]"></app-hero-detail>

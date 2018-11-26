@@ -3,14 +3,67 @@
   grid-gap: 10px;
   grid-template-columns: repeat(auto-fill, minmax(150px,1fr));
   grid-auto-rows: auto;
+  grid-row-gap: 2rem;
 }
+
 .hero-item {
   display: flex;
   align-items: center;
+  position: relative;
 }
+
 .hero-item img {
   width: 100%;
   height: 100%;
   object-fit: contain;
   align-self: center; 
+  max-height: 300px;
+}
+
+.votes {
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, .8);
+  color: bisque;
+  width: 3rem;
+  height: 3rem;
+  line-height: 3rem;
+  text-align: center;
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  border: 2px solid bisque;
+}
+
+.hide-detail {
+  display: none;
+}
+
+.show-detail {
+  display: block;
+}
+
+.hero-name {
+  position: absolute;
+  padding: 0 10px;
+  top: -1px;
+  background-color: rgba(255, 228, 196, .9);
+  color: black;
+  border: 2px solid black;
+  border-radius: 20px;
+  margin: 0;
+}
+
+.hero-item:first-child .votes {
+  width: 10rem;
+  border-radius: 30px;
+}
+
+@media (min-width: 600px) {
+  .hero-item:first-child {
+    grid-column: 1/3;
+    grid-row: 1/1;
+    border: 1px solid grey;
+    border-radius: 20px;
+    background-color: lightsteelblue;
+  }
 }

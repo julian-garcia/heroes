@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Hero } from '../shared/hero.model';
+import { HeroesService } from '../shared/heroes.service';
 
 @Component({
   selector: 'app-hero-detail',
@@ -6,10 +8,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./hero-detail.component.css']
 })
 export class HeroDetailComponent implements OnInit {
+  @Input() singleHero: Hero;
 
-  constructor() { }
+  constructor(private heroesService: HeroesService) { }
 
   ngOnInit() {
+    this.heroesService.heroSelected.subscribe(
+      (hero: Hero) => {
+        console.log(hero);
+        this.singleHero = hero;
+      }
+    );
   }
 
+  onCloseDetail() {
+
+  }
 }

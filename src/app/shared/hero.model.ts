@@ -3,5 +3,6 @@ export class Hero {
     public name: string, 
     public imagePath: string, 
     public description: string,
-    public votes: number) {}
+    public votes: number
+  ) {}
 }
