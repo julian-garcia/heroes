@@ -3,6 +3,9 @@ import { EventEmitter } from "@angular/core";
 
 export class HeroesService {
   heroSelected = new EventEmitter<Hero>();
+  showDetail = new EventEmitter<boolean>();
+  showDashboard = new EventEmitter<boolean>();
+  updatedHeroes = new EventEmitter<Hero[]>();
 
   private heroes: Hero[] = [
     new Hero('Banana', 'assets/images/banana.png', 'Test desc', 0),
@@ -23,6 +26,15 @@ export class HeroesService {
   ];
 
   getHeroes() {
-    return this.heroes.slice();
+    return this.heroes.sort((hero1, hero2) => {
+      if (hero2.votes == hero1.votes) 
+        if (hero1.name > hero2.name) return 1; else return -1;
+      else 
+        return hero2.votes - hero1.votes;
+    }).slice();
+  }
+
+  registerUpvotes(upvotedHeroes: Hero[]) {
+    this.heroes = upvotedHeroes;
   }
 }

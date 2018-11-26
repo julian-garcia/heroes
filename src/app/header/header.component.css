@@ -41,7 +41,7 @@ h1 {
   background-color: black;
   position: relative;
   min-width: 250px; 
-  z-index: 1;
+  z-index: 999;
 }
 
 .menu a {

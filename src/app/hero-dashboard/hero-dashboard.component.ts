@@ -14,15 +14,15 @@ export class HeroDashboardComponent implements OnInit {
   constructor(private heroesService: HeroesService) { }
 
   ngOnInit() {
-    this.heroes = this.heroesService.getHeroes()
-      .sort((hero1, hero2) => {
-        if (hero2.votes == hero1.votes) 
-          if (hero1.name > hero2.name) return 1; else return -1;
-        else 
-          return hero2.votes - hero1.votes;
-      }).slice(0, 6);
+    this.heroes = this.heroesService.getHeroes().slice(0, 6);
+
+    this.heroesService.showDetail.subscribe(
+      (showDetail:boolean) => {
+        this.showDetail = showDetail;
+      }
+    );
   }
-  
+
   onSelectHero(hero: Hero) {
     this.heroesService.heroSelected.emit(hero);
     this.showDetail = true;

@@ -3,7 +3,9 @@
   display: grid;
   top: 3rem;
   background-color: rgba(255, 228, 196, .8);
-  width:75%;
+  box-sizing: border-box;
+  width: calc(100% - 2rem);
+  padding: 0 5%;
 }
 
 .hero-detail-name {
@@ -14,4 +16,16 @@
 
 .hero-detail-image {
   max-width: 300px;
+}
+
+.hero-description {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.5rem;
+}
+
+@media (min-width: 900px) {
+  .hero-detail {
+    width: calc(75% - 2rem);
+    padding: 0 20%;
+  }
 }

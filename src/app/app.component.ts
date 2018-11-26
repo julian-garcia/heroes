@@ -9,4 +9,5 @@ import { HeroesService } from './shared/heroes.service';
 })
 export class AppComponent {
   title = 'Heroes';
+  constructor(private heroesService: HeroesService) {}
 }

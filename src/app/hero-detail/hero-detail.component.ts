@@ -15,13 +15,25 @@ export class HeroDetailComponent implements OnInit {
   ngOnInit() {
     this.heroesService.heroSelected.subscribe(
       (hero: Hero) => {
-        console.log(hero);
         this.singleHero = hero;
       }
     );
   }
 
   onCloseDetail() {
+    this.heroesService.showDetail.emit(false);
+  }
 
+  onUpvote() {
+    let heroes = this.heroesService.getHeroes();
+    let index = heroes.findIndex(hero => {return hero==this.singleHero});
+    heroes[index].votes += 1;
+    heroes.sort((hero1, hero2) => {
+      if (hero2.votes == hero1.votes) 
+        if (hero1.name > hero2.name) return 1; else return -1;
+      else 
+        return hero2.votes - hero1.votes;
+      });
+    this.heroesService.registerUpvotes(heroes);
   }
 }
