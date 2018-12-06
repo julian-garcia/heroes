@@ -13,6 +13,13 @@ export class HeroDetailComponent implements OnInit {
   constructor(private heroesService: HeroesService) { }
 
   ngOnInit() {
+    const lastClickedHero = this.heroesService.getLastHero();
+    
+    if (lastClickedHero == undefined) { 
+      this.singleHero = this.heroesService.getHeroes().slice()[0];
+    } else {
+      this.singleHero = lastClickedHero;
+    }
     this.heroesService.heroSelected.subscribe(
       (hero: Hero) => {
         this.singleHero = hero;
@@ -35,5 +42,6 @@ export class HeroDetailComponent implements OnInit {
         return hero2.votes - hero1.votes;
       });
     this.heroesService.registerUpvotes(heroes);
+    this.heroesService.updatedHeroes.emit(heroes);
   }
 }

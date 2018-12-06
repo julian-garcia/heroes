@@ -5,6 +5,7 @@ export class HeroesService {
   heroSelected = new EventEmitter<Hero>();
   showDetail = new EventEmitter<boolean>();
   showDashboard = new EventEmitter<boolean>();
+  showList = new EventEmitter<boolean>();
   updatedHeroes = new EventEmitter<Hero[]>();
 
   private heroes: Hero[] = [
@@ -25,6 +26,8 @@ export class HeroesService {
     new Hero('Wonder Woman', 'assets/images/wonder-woman.jpg', 'Test desc', 0),
   ];
 
+  private lastClickedHero:Hero;
+
   getHeroes() {
     return this.heroes.sort((hero1, hero2) => {
       if (hero2.votes == hero1.votes) 
@@ -36,5 +39,13 @@ export class HeroesService {
 
   registerUpvotes(upvotedHeroes: Hero[]) {
     this.heroes = upvotedHeroes;
+  }
+
+  setLastHero(hero:Hero) {
+    this.lastClickedHero = hero;
+  }
+
+  getLastHero() {
+    return this.lastClickedHero;
   }
 }

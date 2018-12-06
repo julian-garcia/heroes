@@ -2,8 +2,8 @@
   <span class="dashboard-links">
     <i class="material-icons" (click)="showMenu = !showMenu">menu</i>
     <ul class="menu" *ngIf="showMenu">
-      <li><i class="material-icons">dashboard</i> Dashboard</li>
-      <li><i class="material-icons">list</i> Listing</li>
+      <li><a href="#" (click)="onShowDashboard()"><i class="material-icons">dashboard</i> Dashboard</a></li>
+      <li><a href="#" (click)="onShowList()"><i class="material-icons">list</i> Listing</a></li>
     </ul>
   </span>
   <span class="home-link"><a href="#">Heroes</a></span>

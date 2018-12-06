@@ -1,5 +1,6 @@
 <app-header></app-header>
 <div class="container">
-  <app-hero-dashboard></app-hero-dashboard>
-  <app-hero-list></app-hero-list>
+  <app-hero-dashboard *ngIf="showDashboard"></app-hero-dashboard>
+  <app-hero-list *ngIf="showList"></app-hero-list>
+  <app-hero-detail *ngIf="showDetail"></app-hero-detail>
 </div>

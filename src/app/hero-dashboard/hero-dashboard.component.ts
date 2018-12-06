@@ -8,23 +8,24 @@ import { Hero } from '../shared/hero.model';
   styleUrls: ['./hero-dashboard.component.css']
 })
 export class HeroDashboardComponent implements OnInit {
-  showDetail = false;
   private heroes:Hero[];
 
   constructor(private heroesService: HeroesService) { }
 
   ngOnInit() {
     this.heroes = this.heroesService.getHeroes().slice(0, 6);
-
-    this.heroesService.showDetail.subscribe(
-      (showDetail:boolean) => {
-        this.showDetail = showDetail;
+    // Re-order heroes by descending upvotes dynamically as and 
+    // when characters are upvoted
+    this.heroesService.updatedHeroes.subscribe(
+      (heroes: Hero[]) => {
+        this.heroes = heroes.slice(0, 6);
       }
     );
   }
 
   onSelectHero(hero: Hero) {
+    this.heroesService.showDetail.emit(true);
     this.heroesService.heroSelected.emit(hero);
-    this.showDetail = true;
+    this.heroesService.setLastHero(hero);
   }
 }

@@ -3,7 +3,7 @@
   <img class="hero-detail-image" src="{{ singleHero.imagePath }}" 
   alt="{{ singleHero.name }}">
   <textarea class="hero-description" cols="30" rows="5" [(ngModel)]="singleHero.description"></textarea>
-  <h3 class="votes">{{ singleHero.votes }}</h3>
+  <h3 class="votes">Upvotes: {{ singleHero.votes }}</h3>
   <button (click)="onUpvote($event)">Upvote</button>
   <button (click)="onCloseDetail($event)">Close</button>
 </div>

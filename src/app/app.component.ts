@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HeroesService } from './shared/heroes.service';
+import { Hero } from './shared/hero.model';
 
 @Component({
   selector: 'app-root',
@@ -7,7 +8,34 @@ import { HeroesService } from './shared/heroes.service';
   styleUrls: ['./app.component.css'],
   providers: [HeroesService]
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'Heroes';
+  private showDetail:boolean = true;
+  private showDashboard:boolean = true;
+  private showList:boolean = true;
+  private heroes:Hero[];
   constructor(private heroesService: HeroesService) {}
+
+  ngOnInit() {
+    this.heroes = this.heroesService.getHeroes().slice();
+
+    this.heroesService.showDetail.subscribe(
+      (showDetail:boolean) => {
+        this.showDetail = showDetail;
+      }
+    );
+
+    this.heroesService.showDashboard.subscribe(
+      (showDashboard:boolean) => {
+        this.showDashboard = showDashboard;
+      }
+    );
+
+    this.heroesService.showList.subscribe(
+      (showList:boolean) => {
+        this.showList = showList;
+      }
+    );
+
+  }
 }

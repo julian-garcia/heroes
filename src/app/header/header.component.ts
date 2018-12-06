@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HeroesService } from '../shared/heroes.service';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   showMenu = false;
-  constructor() { }
+  constructor(private heroesService: HeroesService) { }
 
   ngOnInit() {
   }
 
+  onShowDashboard() {
+    this.heroesService.showDashboard.emit(true);
+    this.heroesService.showList.emit(false);
+  }
+
+  onShowList() {
+    this.heroesService.showDashboard.emit(false);
+    this.heroesService.showList.emit(true);
+  }
 }
