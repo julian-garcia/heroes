@@ -8,7 +8,7 @@ import { Hero } from '../shared/hero.model';
   styleUrls: ['./hero-list.component.css']
 })
 export class HeroListComponent implements OnInit {
-  private heroes:Hero[];
+  heroes:Hero[];
 
   constructor(private heroesService: HeroesService) { }
 

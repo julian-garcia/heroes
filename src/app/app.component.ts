@@ -15,6 +15,7 @@ export class AppComponent implements OnInit {
   showList:boolean = false;
   showMenu:boolean = true;
   heroes:Hero[];
+  
   constructor(private heroesService: HeroesService) {}
 
   ngOnInit() {

@@ -7,7 +7,7 @@ import { HeroesService } from '../shared/heroes.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  private showMenu:boolean = false;
+  showMenu:boolean = false;
 
   constructor(private heroesService: HeroesService) { }
 
