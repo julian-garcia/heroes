@@ -4,6 +4,6 @@
   alt="{{ singleHero.name }}">
   <textarea class="hero-description" cols="30" rows="5" [(ngModel)]="singleHero.description"></textarea>
   <h3 class="votes">Upvotes: {{ singleHero.votes }}</h3>
-  <button (click)="onUpvote($event)">Upvote</button>
-  <button (click)="onCloseDetail($event)">Close</button>
+  <button (click)="onUpvote()">Upvote</button>
+  <button (click)="onCloseDetail()">Close</button>
 </div>
