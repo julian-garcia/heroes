@@ -10,11 +10,11 @@ import { Hero } from './shared/hero.model';
 })
 export class AppComponent implements OnInit {
   title = 'Heroes';
-  private showDetail:boolean = true;
-  private showDashboard:boolean = true;
-  private showList:boolean = false;
-  private showMenu:boolean = true;
-  private heroes:Hero[];
+  showDetail:boolean = true;
+  showDashboard:boolean = true;
+  showList:boolean = false;
+  showMenu:boolean = true;
+  heroes:Hero[];
   constructor(private heroesService: HeroesService) {}
 
   ngOnInit() {
