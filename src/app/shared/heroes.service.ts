@@ -6,6 +6,7 @@ export class HeroesService {
   showDetail = new EventEmitter<boolean>();
   showDashboard = new EventEmitter<boolean>();
   showList = new EventEmitter<boolean>();
+  showMenu = new EventEmitter<boolean>();
   updatedHeroes = new EventEmitter<Hero[]>();
 
   private heroes: Hero[] = [

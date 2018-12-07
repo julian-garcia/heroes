@@ -1,0 +1,19 @@
+.hero-list button {
+  height: 3rem;
+  margin: 0 1rem 1rem 1rem;
+  font-size: 1.5rem;
+  background-color: azure;
+  border: 1px solid #cacaca;
+  cursor: pointer;
+}
+.hero-list button:hover {
+  background-color: black;
+  color: white;
+}
+
+@media (min-width: 900px) {
+  .hero-list {
+    width: calc(60vw - 2rem);
+    float: left;
+  }
+}

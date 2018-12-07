@@ -1,5 +1,6 @@
 .hero-detail {
-  display: grid;
+  position: absolute;
+  top: 5rem;
   box-sizing: border-box;
   padding: 0 1rem;
   margin: 0;
@@ -7,6 +8,8 @@
   border-radius: 10px;
   box-sizing: border-box;
   overflow: hidden;
+  width: calc(100vw - 2rem);
+  background-color: white;
 }
 
 .hero-detail-name {
@@ -15,17 +18,45 @@
   font-size: 2rem;
 }
 
-.hero-detail-image {
-  max-width: 300px;
-}
-
 .hero-description {
   font-family: 'Nunito', sans-serif;
   font-size: 1.5rem;
 }
 
+button {
+  margin: 0 1rem 1rem 1rem;
+  padding: .5rem;
+  font-size: 1.5rem;
+  background-color: #cacaca;
+  border: 1px solid #cacaca;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: black;
+  color: white;
+}
+
+textarea, input, img {
+  width: calc(100vw - 5rem);
+}
+
 @media (min-width: 900px) {
   .hero-detail {
-    width:calc(40vw - 2rem);
+    width: calc(40vw - 2rem);
+  }
+  img {
+    max-width: 20vw;
+  }
+  textarea, input {
+    width: calc(40vw - 4.5rem);
+  }
+}
+
+@media (min-width: 400px) {
+  .hero-detail {
+    display: block;
+    position: relative;
+    top: 0;
   }
 }

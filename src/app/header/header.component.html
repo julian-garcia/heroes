@@ -1,6 +1,6 @@
 <header>
   <span class="dashboard-links">
-    <i class="material-icons" (click)="showMenu = !showMenu">menu</i>
+    <i class="material-icons" (click)="onShowMenu()">menu</i>
     <ul class="menu" *ngIf="showMenu">
       <li><a href="#" (click)="onShowDashboard()"><i class="material-icons">dashboard</i> Dashboard</a></li>
       <li><a href="#" (click)="onShowList()"><i class="material-icons">list</i> Listing</a></li>

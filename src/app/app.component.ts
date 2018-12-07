@@ -12,7 +12,8 @@ export class AppComponent implements OnInit {
   title = 'Heroes';
   private showDetail:boolean = true;
   private showDashboard:boolean = true;
-  private showList:boolean = true;
+  private showList:boolean = false;
+  private showMenu:boolean = true;
   private heroes:Hero[];
   constructor(private heroesService: HeroesService) {}
 
@@ -37,5 +38,10 @@ export class AppComponent implements OnInit {
       }
     );
 
+    if (window.innerWidth <= 400) {
+      this.heroesService.showDetail.emit(false);
+    } else {
+      this.heroesService.showDetail.emit(true);
+    }
   }
 }

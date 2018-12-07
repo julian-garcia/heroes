@@ -7,19 +7,31 @@ import { HeroesService } from '../shared/heroes.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  showMenu = false;
+  private showMenu:boolean = false;
+
   constructor(private heroesService: HeroesService) { }
 
   ngOnInit() {
+    this.heroesService.showMenu.subscribe(
+      (showMenu:boolean) => {
+        this.showMenu = showMenu;
+      }
+    );
+  }
+
+  onShowMenu() {
+    this.heroesService.showMenu.emit(this.showMenu=!this.showMenu);
   }
 
   onShowDashboard() {
     this.heroesService.showDashboard.emit(true);
     this.heroesService.showList.emit(false);
+    this.heroesService.showMenu.emit(false);
   }
 
   onShowList() {
     this.heroesService.showDashboard.emit(false);
     this.heroesService.showList.emit(true);
+    this.heroesService.showMenu.emit(false);
   }
 }

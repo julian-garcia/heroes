@@ -17,6 +17,8 @@ export class HeroListComponent implements OnInit {
   }
 
   onSelectHero(hero: Hero) {
+    this.heroesService.showDetail.emit(true);
     this.heroesService.heroSelected.emit(hero);
+    this.heroesService.setLastHero(hero);
   }
 }

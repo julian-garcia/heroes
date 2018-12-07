@@ -29,6 +29,10 @@ h1 {
   text-align: left;
 }
 
+.dashboard-links i:first-of-type:hover {
+  cursor: pointer;
+}
+
 .menu {
   background-color: black;
   position: relative;
